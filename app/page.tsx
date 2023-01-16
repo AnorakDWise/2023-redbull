@@ -1,6 +1,19 @@
+"use client";
+
 import Footer from "./Footer";
+import { useState } from "react";
 
 const Page = () => {
+  const units = ["250ml", "8.45oz", "1.042cup", "16.91tablespoons"];
+  const cans = 3;
+  const [counter, setCounter] = useState(0);
+  const swapUnits = () => {
+    if (counter === 4) {
+      setCounter(counter - 4);
+    } else {
+      setCounter(counter + 1);
+    }
+  };
   return (
     <main className="w-screen h-screen m-auto bg-gray-900 flex justify-center items-center">
       <div className="flex justify-center items-center space-x-[0.5vw]">
@@ -94,9 +107,12 @@ const Page = () => {
 
         <div className="flex justify-start items-start flex-col">
           <h1 className="text-[10vw] mb-[-6vh] mt-[-7vh] font-semibold text-redbullYellow">
-            3
+            {cans}
           </h1>
-          <h2 className="font-medium text-redbullRed">RedBull cans in 2023</h2>
+          <h2 className="font-medium text-redbullRed">
+            <button onClick={swapUnits}>{units[counter]}</button> RedBull cans
+            in 2023 ({0.97 * counter} €)
+          </h2>
         </div>
       </div>
       <Footer />

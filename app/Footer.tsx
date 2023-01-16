@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="w-screen h-screen absolute flex flex-col justify-end items-center m-auto inset-0 pb-[2vh]">
+    <div className="w-screen h-screen absolute flex flex-col justify-end items-center m-auto inset-0 pb-[2vh] -z-10">
       <div className="flex justify-center items-centers text-gray-100">
         <span className="text-redbullYellow mr-[0.25vw]">
           &copy;2023 Gregory Buffard

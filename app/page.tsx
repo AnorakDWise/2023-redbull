@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Page = () => {
   const units = ["250ml", "8.45oz", "1.042cup", "16.91tablespoons"];
-  const cans = 4;
+  const cans = 6;
   const [counter, setCounter] = useState(0);
   const [unit, setUnit] = useState(0);
 
@@ -105,8 +105,8 @@ const Page = () => {
             {cans}
           </h1>
           <h2 className="font-medium text-redbullRed">
-            <button onClick={handleUnit}>{units[unit]}</button> RedBull cans in
-            2023 ({0.97 * cans} €)
+            <button onClick={" "}>{units[unit]}</button> RedBull cans in 2023 (
+            {0.97 * cans} €)
           </h2>
         </div>
       </div>

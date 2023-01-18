@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Page = () => {
   const units = ["250ml", "8.45oz", "1.042cup", "16.91tablespoons"];
-  const cans = 6;
+  const cans = 10;
   const [counter, setCounter] = useState(0);
   const [unit, setUnit] = useState(0);
 

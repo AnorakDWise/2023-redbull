@@ -5,9 +5,15 @@ import { useState } from "react";
 
 const Page = () => {
   const units = ["250ml", "8.45oz", "1.042cup", "16.91tablespoons"];
-  const cans = 10;
-  const [counter, setCounter] = useState(0);
+  const cans = 11;
   const [unit, setUnit] = useState(0);
+  const switchUnit = () => {
+    if (unit < units.length - 1) {
+      setUnit(unit + 1);
+    } else {
+      setUnit(0);
+    }
+  };
 
   return (
     <main className="w-screen h-screen m-auto bg-gray-900 flex justify-center items-center">
@@ -101,12 +107,12 @@ const Page = () => {
         </svg>
 
         <div className="flex justify-start items-start flex-col">
-          <h1 className="text-[10vw] mb-[-6vh] mt-[-7vh] font-semibold text-redbullYellow">
+          <h1 className="text-[10vw] mb-[-3vw] mt-[-7vh] font-semibold text-redbullYellow">
             {cans}
           </h1>
           <h2 className="font-medium text-redbullRed">
-            <button onClick={" "}>{units[unit]}</button> RedBull cans in 2023 (
-            {0.97 * cans} €)
+            <button onClick={switchUnit}>{units[unit]}</button> RedBull cans in
+            2023 ({0.97 * cans} €)
           </h2>
         </div>
       </div>

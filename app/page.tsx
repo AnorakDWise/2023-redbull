@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Page = () => {
   const units = ["250ml", "8.45oz", "1.042cup", "16.91tablespoons"];
-  const cans = 11;
+  const cans = 12;
   const [unit, setUnit] = useState(0);
   const switchUnit = () => {
     if (unit < units.length - 1) {
@@ -16,8 +16,8 @@ const Page = () => {
   };
 
   return (
-    <main className="w-screen h-screen m-auto bg-gray-900 flex justify-center items-center">
-      <div className="flex justify-center items-center space-x-[0.5vw]">
+    <main className="w-screen h-screen m-auto bg-gray-900 flex flex-col justify-center items-center">
+      <div className="flex justify-center items-center space-x-[0.5vw] w-max h-max relative z-50">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -116,7 +116,9 @@ const Page = () => {
           </h2>
         </div>
       </div>
-      <Footer />
+      <div className="m-auto absolute bottom-[1vw] w-screen h-screen flex justify-center items-end z-10">
+        <Footer />
+      </div>
     </main>
   );
 };

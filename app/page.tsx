@@ -21,9 +21,8 @@ const Page = () => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
-          width="242.13"
-          height="183.62"
           viewBox="0 0 242.13 183.62"
+          className="w-[13.5vw]"
         >
           <defs>
             <clipPath id="clip-path">

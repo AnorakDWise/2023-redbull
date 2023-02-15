@@ -5,8 +5,24 @@ import { useState } from "react";
 
 const Page = () => {
   const units = ["250ml", "8.45oz", "1.042cup", "16.91tablespoons"];
+  const currencies = ["€", "$", "£", "¥"];
+  const prices = [0.97, 1.04, 0.86, 138];
+
   const cans = 40;
+
   const [unit, setUnit] = useState(0);
+  const [currency, setCurrency] = useState(0);
+  const [price, setPrice] = useState(0);
+
+  const switchCurrency = () => {
+    if (currency < currencies.length - 1) {
+      setCurrency(currency + 1);
+      setPrice(price + 1);
+    } else {
+      setCurrency(0);
+      setPrice(0);
+    }
+  };
   const switchUnit = () => {
     if (unit < units.length - 1) {
       setUnit(unit + 1);
@@ -14,6 +30,8 @@ const Page = () => {
       setUnit(0);
     }
   };
+
+  const finalPrice = (cans * prices[price]).toFixed(2);
 
   return (
     <main className="w-screen h-screen m-auto bg-gray-900 flex flex-col justify-center items-center">
@@ -111,7 +129,11 @@ const Page = () => {
           </h1>
           <h2 className="font-medium text-redbullRed">
             <button onClick={switchUnit}>{units[unit]}</button> RedBull cans in
-            2023 ({0.97 * cans} €)
+            2023 (
+            <button onClick={switchCurrency}>
+              {finalPrice} {currencies[currency]}
+            </button>
+            )
           </h2>
         </div>
       </div>

@@ -8,7 +8,7 @@ const Page = () => {
   const currencies = ["€", "$", "£", "¥"];
   const prices = [0.97, 1.04, 0.86, 138];
 
-  const cans = 45;
+  const cans = 48;
 
   const [unit, setUnit] = useState(0);
   const [currency, setCurrency] = useState(0);
